@@ -7,6 +7,15 @@ class Node {
         Node* next;
 
 };
+
+void Rdisplay(Node* p){
+    if(p == nullptr){
+        return;
+    }
+    cout<<p->data<<" ";
+    Rdisplay(p->next);
+}
+
  int main(){
     int a[6] = {12, 34, 56, 78, 90, 23};
     Node *head = new Node();
@@ -29,6 +38,10 @@ class Node {
         cout<<p->data<<" ";
         p = p->next;
     }
+    cout<<endl;
+
+    cout<<"Recursive Display: ";
+    Rdisplay(head);
     cout<<endl;
     return 0;
  }
